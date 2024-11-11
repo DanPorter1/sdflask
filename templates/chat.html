@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="chat-wrap"> 
+    <img src="{{url_for('static', filename='chat-bg.jpg')}}" alt="Background Image">
+</div>
 <main class="chat-area">
     <div class="chat-message" id="chatbox">
-        <h1 class="title">Chimpamzee Chat</h1>
+        <h1 class="title">SARA – Support Assistant Recovery Agent</h1>
         <p>Hello! How can I assist you today?</p>
     </div>
 </main>
 
 <div class="message-input" id="userInput">
-    <input type="text" placeholder="Message Chimpanzee" id="textInput">
+    <input type="text" placeholder="Message SARA" id="textInput">
     <button>Send</button>
 </div>
 </div>
+<!-- <div class="video-wrap">
+    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+        <source src="{{url_for('static', filename='chat-bg.mp4')}}" type="video/mp4">
+
+        Your browser does not support the video tag.
+    </video>
+</div> -->
     <script>
       function getBotResponse() {
         var rawText = document.getElementById("textInput").value;
-        var userHtml = '<p class="userText"><img src="static/user.jpg" alt="User" style="width: 30px; height: 30px; margin-right: 5px;"><span style="color: LightSeaGreen;">User: </span>' + rawText + "</p>";
+        var userHtml = '<p class="userText"><img src="static/user.png" alt="User" style="width: 30px; height: 30px; margin-right: 5px;"><span style="color: LightSeaGreen;">User: </span>' + rawText + "</p>";
         document.getElementById("textInput").value = "";
         document.getElementById("chatbox").innerHTML += userHtml;
         document.querySelector(".chat-message").scrollTo({ top: document.querySelector(".chat-message").scrollHeight, behavior: "smooth" });
@@ -24,7 +34,7 @@
         xhr.open("GET", "/get?msg=" + rawText, true);
         xhr.onload = function() {
           if (xhr.status === 200) {
-            var botHtml = '<p class="botText"><img src="static/chimp.jpg" alt="User" style="width: 30px; height: 30px; margin-right: 5px;"><span style="color: SaddleBrown;">Chipmamzee: </span>' + xhr.responseText + "</p>";
+            var botHtml = '<p class="botText"><img src="static/agent4.png" alt="User" style="width: 30px; height: 30px; margin-right: 5px;"><span style="color: SaddleBrown;">SARA: </span>' + xhr.responseText + "</p>";
             document.getElementById("chatbox").innerHTML += botHtml;
             document.querySelector(".chat-message").scrollTo({ top: document.querySelector(".chat-message").scrollHeight, behavior: "smooth"
           })
@@ -38,5 +48,4 @@
         }
       });
     </script>
-</body>
 {% endblock %}
