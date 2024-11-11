@@ -1,24 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main class="chat-area">
-    <div class="chat-message">
-        <h1 class="title">Welcome to Your AI-Powered Support Assistant</h1>
-        <br>
-        <h3>Introducing the AI-Driven Support Assistant App</h1>
-        <p>Effortlessly manage and resolve your technical issues with our innovative app. Whether you're experiencing internet problems or need help with basic troubleshooting, our AI-driven support assistant is here to make support simpler and faster.</p>
-        <h2>Key Features:</h2>
-        <ul>
-          <li>Chat with AI for Assistance: Our intelligent chat assistant is available to guide you through common issues, answer your questions, and provide real-time troubleshooting for internet and connectivity problems.</li>
-          <li>Log Support Tickets: Easily log support tickets with our intuitive interface. Just follow the prompts, and your issue will be documented and ready for follow-up.</li>
-          <li>Automated Troubleshooting: Get instant help with common internet issues. Our AI will walk you through basic troubleshooting steps to save time and help you get back online.</li>
-        </ul>
-        <h2>How to Use the App:</h2>
-        <ol>
-          <li>Start with the Chat Assistant: Interact with our chat assistant to diagnose and resolve issues.</li>
-          <li>Log a Support Ticket: If needed, log a support ticket directly through the app, making it easy to get the help you need.</li>
-        </ol>
-        <p><strong>Get Started Today!</strong> Make support easy, accessible, and efficient with our AI-driven support assistant app. Download now and experience the future of technical support!</p>
+<div class="main-content">
+    <div class="heading-main"
+      <h1><img src="{{url_for('static', filename='agent4.png')}}" alt="C-3PO" width="150" height="150">
+        <h1>Welcome to Your AI-Powered Support Assistant</h1>
     </div>
-</main>
+    <div class="main-content-body">
+        <h2>Introducing SARA – Support Assistant Recovery Agent</h2>
+
+    <section>
+      <p>Resolve technical issues faster and more efficiently with SARA, your AI-powered support assistant. Whether you're facing internet connectivity problems, software glitches, or need general troubleshooting help, SARA is here to assist you in formatting and organizing your support requests to ensure you're getting the right help at the right time.</p>
+    </section>
+
+    <section>
+        <h3>Key Features:</h3>
+        <ul class="custom-list">
+            <li><strong>AI Chat Assistance:</strong> SARA’s intelligent chat assistant helps you diagnose common issues, answer technical questions, and guide you through basic troubleshooting steps for internet or system problems.</li>
+            <li><strong>Ticket Formatting Support:</strong> While SARA can’t log support tickets directly, it helps you create well-structured, detailed requests that include all the information the support team needs for quicker resolutions.</li>
+            <li><strong>Automated Troubleshooting Guidance:</strong> Need help with basic issues? SARA will walk you through troubleshooting steps to help you resolve problems immediately—no waiting needed.</li>
+            <li><strong>Ticket Readiness Check:</strong> SARA ensures that your support ticket is complete and ready for submission, including system details, error messages, and any other crucial information to speed up the resolution process.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>How to Use the App:</h3>
+        <ol class="custom-list">
+            <li><strong>Start with the Chat Assistant:</strong> Begin by interacting with SARA to describe your issue or ask questions. SARA will help troubleshoot or gather the right details.</li>
+            <li><strong>Prepare Your Support Ticket:</strong> If troubleshooting doesn’t resolve the issue, SARA will guide you in organizing your support ticket and ensuring all necessary information is included.</li>
+            <li><strong>Submit Your Request:</strong> Once your ticket is formatted, submit it to the support team for follow-up.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h3>Get Started Today!</h3>
+        <p>Make technical support easier, more efficient, and stress-free with SARA, your AI-driven support assistant. Download the app now and experience how smart assistance can simplify problem-solving!</p>
+    </section>
+    </div>
+  </div>
+  <div class="video-wrap">
+    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+        <source src="{{url_for('static', filename='video.mp4')}}" type="video/mp4">
+
+        Your browser does not support the video tag.
+    </video>
+</div>
 {% endblock %}
