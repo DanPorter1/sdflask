@@ -1,0 +1,178 @@
+/* General Styles */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    padding: 15px;
+}
+
+/* .menu {
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+} */
+
+.navbar-menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.navbar-link:hover {
+    background-color: #555;
+}
+
+.navbar-logo {
+    height: 30px;
+}
+
+.hamburger {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Modal Styles */
+.modal, .modal-account {
+    position: fixed;
+    top: 50%;
+    width: 300px; 
+    max-width: 50%; 
+    height: 100%;
+    transform: translateY(-50%); 
+    transition: transform 0.3s ease, visibility 0s, opacity 2s ease;
+    background-color: rgba(0, 0, 0, 0.4); 
+    visibility: hidden;
+    opacity: 0;
+  }
+
+.modal {
+    right: 0;
+}
+
+.modal-account {
+    left: 0;
+}
+
+.modal.show, .modal-account.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.close, .close-acc {
+    font-size: 30px;
+    color: #aaa;
+    cursor: pointer;
+    position: absolute;
+}
+
+/* Form Inputs & Buttons */
+.input-field, .radio-input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.btn-send, .btn-submit {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-send:hover, .btn-submit:hover {
+    background-color: #45a049;
+}
+
+/* Chatbox */
+.chat-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+}
+
+.chat-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.chat-message p {
+    margin: 10px 0;
+}
+
+/* Background Image for Chat */
+.chat-bg-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Layout & Spacing */
+.container, .main-content {
+    padding: 20px;
+}
+
+/* Buttons */
+#custom-button {
+    padding: 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#custom-button:hover {
+    background-color: #007bb5;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-header-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Features & Usage Lists */
+.features-list, .usage-list {
+    margin-left: 20px;
+}
+
+.features-list li, .usage-list li {
+    margin-bottom: 10px;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}

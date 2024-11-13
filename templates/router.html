@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="chat-wrap"> 
+    <img src="{{url_for('static', filename='chat-bg.jpg')}}" alt="Background Image">
+</div>
+<main class="router-area-main">
+    <div>
+        <h1 class="title">Network Diagnostic Tool</h1>
+        <br>
+
+        {% if question_data.get('end') %}
+            <p class="question-text">{{ question_data.text }}</p>
+            <br>
+                <p>Troubleshooting concluded. Please <a href="{{ url_for('reset') }}"></a><button id="custom-button" type="button" onclick="window.location.href = '/reset' ; ">Reset</button></a> to start again.</p><br><br>
+        {% else %}
+            <h1>{{ question_data.text }}</h1>
+            <form action="{{ url_for('answer') }}" method="post"><br>
+                <input type="radio" name="answer" value="yes" required> .  <span bold>Yes</span><br><br>
+                <input type="radio" name="answer" value="no" required> .  <span bold>No</span><br>
+                <br><br>
+                    <button id="custom-button" type="submit">Submit Answer</button>
+                <br><br>
+            </form>
+        {% endif %}
+    
+        <h2>History of Responses</h2><br><br>
+        {% if history %}
+            <ul>
+                {% for q, a in history %}
+                    <li>Question: {{ q }} - Answer: {{ a }}</li>
+                {% endfor %}
+            </ul><br><br>
+        {% else %}
+            <p>No responses recorded yet.</p>
+        {% endif %}
+    
+        <a href="{{ url_for('reset') }}"><button id="custom-button" type="button" onclick="window.location.href = '/reset' ; ">Reset</button></a>
+        <p>Back to the start!</p>
+    </div>
+</main>
+{% endblock %}

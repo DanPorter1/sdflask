@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Main Content Block -->
+<div class="main-content">
+    <header class="main-header">
+        <img src="{{ url_for('static', filename='agent4.png') }}" alt="SARA" class="main-header-logo">
+        <h1>Welcome to Your AI-Powered Support Assistant</h1>
+    </header>
+
+    <section class="main-body">
+        <h2>Introducing SARA – Support Assistant Recovery Agent</h2>
+        <p>Resolve technical issues faster and more efficiently with SARA, your AI-powered support assistant. Whether you're facing internet connectivity problems, software glitches, or need general troubleshooting help, SARA is here to assist you in formatting and organizing your support requests to ensure you're getting the right help at the right time.</p>
+
+        <h3>Key Features:</h3>
+        <ul class="features-list">
+            <li><strong>AI Chat Assistance:</strong> SARA’s intelligent chat assistant helps you diagnose common issues, answer technical questions, and guide you through basic troubleshooting steps for internet or system problems.</li>
+            <li><strong>Ticket Formatting Support:</strong> While SARA can’t log support tickets directly, it helps you create well-structured, detailed requests that include all the information the support team needs for quicker resolutions.</li>
+            <li><strong>Automated Troubleshooting Guidance:</strong> Need help with basic issues? SARA will walk you through troubleshooting steps to help you resolve problems immediately—no waiting needed.</li>
+            <li><strong>Ticket Readiness Check:</strong> SARA ensures that your support ticket is complete and ready for submission, including system details, error messages, and any other crucial information to speed up the resolution process.</li>
+        </ul>
+
+        <h3>How to Use the App:</h3>
+        <ol class="usage-list">
+            <li><strong>Start with the Chat Assistant:</strong> Begin by interacting with SARA to describe your issue or ask questions. SARA will help troubleshoot or gather the right details.</li>
+            <li><strong>Prepare Your Support Ticket:</strong> If troubleshooting doesn’t resolve the issue, SARA will guide you in organizing your support ticket and ensuring all necessary information is included.</li>
+            <li><strong>Submit Your Request:</strong> Once your ticket is formatted, submit it to the support team for follow-up.</li>
+        </ol>
+
+        <h3>Get Started Today!</h3>
+        <p>Make technical support easier, more efficient, and stress-free with SARA, your AI-driven support assistant. Download the app now and experience how smart assistance can simplify problem-solving!</p>
+    </section>
+</div>
+
+<!-- Video Background Section -->
+<div class="video-wrap">
+    <video autoplay loop muted class="custom-video">
+        <!-- <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4"> -->
+        Your browser does not support the video tag.
+    </video>
+</div>
+{% endblock %}

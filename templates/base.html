@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Navbar Section -->
+<nav class="navbar menu">
+    <ul class="navbar-menu">
+        <li class="navbar-item">
+            <img src="{{ url_for('static', filename='user.png') }}" alt="Account" class="navbar-logo">
+            <a href="#accountsettings" class="navbar-link" onclick="toggleAccountModal()">Account Settings</a>
+        </li>
+        <li class="navbar-item navbar-title">
+            <img src="{{ url_for('static', filename='agent4.png') }}" alt="SARA" class="navbar-logo">
+            <a href="{{ url_for('chat') }}" class="navbar-link">SARA – Support Assistant Recovery Agent</a>
+        </li>
+        <li class="navbar-item">
+            <div class="hamburger" onclick="toggleModal()">
+                <span class="hamburger-icon">&#9776;</span>
+                <a href="#" class="navbar-link">Navigation</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<!-- Modal Menu Section -->
+<div class="modal menu" id="menuModal">
+    <div class="modal-content">
+        <span class="close" onclick="toggleModal()">&times;</span>
+        <h2>More Pages</h2>
+        <ul>
+            <li><a href="{{ url_for('chat') }}">SARA - Chat</a></li>
+            <li><a href="{{ url_for('router') }}">Internet Checks</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Modal Account Section -->
+<div class="modal-account menu" id="menuModal-account">
+    <div class="modal-content-account">
+        <span class="close-acc" onclick="toggleAccountModal()">&times;</span>
+        <h2>Account Options</h2>
+        <ul>
+            <li>Log In</li>
+            <li>Change Password</li>
+            <li>Create Account</li>
+            <li>Account Settings</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Main Content Section -->
+{% block content %}
+{% endblock %}
+
+<!-- Scripts Section -->
+<script>
+    function toggleModal() {
+        const modal = document.getElementById('menuModal');
+        modal.classList.toggle('show');
+    }
+
+    function toggleAccountModal() {
+        const accountModal = document.getElementById('menuModal-account');
+        accountModal.classList.toggle('show');
+    }
+
+    window.onclick = function(event) {
+        const modal = document.getElementById('menuModal');
+        const accountModal = document.getElementById('menuModal-account');
+        if (event.target === modal) {
+            modal.classList.remove('show');
+        } else if (event.target === accountModal) {
+            accountModal.classList.remove('show');
+        }
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Chat Area -->
+<div class="chat-wrap">
+    <!-- <img src="{{ url_for('static', filename='chat-bg.jpg') }}" alt="Chat Background" class="chat-bg-img"> -->
+</div>
+
+<main class="chat-area">
+    <div class="chat-message" id="chatbox">
+        <h1 class="chat-title">SARA – Support Assistant Recovery Agent</h1>
+        <p>Hello! How can I assist you today?</p>
+    </div>
+</main>
+
+<!-- Message Input Section -->
+<div class="message-input" id="userInput">
+    <input type="text" placeholder="Message SARA" id="textInput" class="input-field">
+    <button onclick="getBotResponse()" class="btn-send">Send</button>
+</div>
+
+<script>
+    function getBotResponse() {
+        var rawText = document.getElementById("textInput").value;
+        var userHtml = '<p class="userText"><img src="static/user.png" alt="User" class="user-icon"><span class="user-label">User: </span>' + rawText + "</p>";
+        document.getElementById("textInput").value = "";
+        document.getElementById("chatbox").innerHTML += userHtml;
+        document.querySelector(".chat-message").scrollTo({ top: document.querySelector(".chat-message").scrollHeight, behavior: "smooth" });
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/get?msg=" + rawText, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                var botHtml = '<p class="botText"><img src="static/agent4.png" alt="SARA" class="bot-icon"><span class="bot-label">SARA: </span>' + xhr.responseText + "</p>";
+                document.getElementById("chatbox").innerHTML += botHtml;
+                document.querySelector(".chat-message").scrollTo({ top: document.querySelector(".chat-message").scrollHeight, behavior: "smooth" });
+            }
+        };
+        xhr.send();
+    }
+
+    document.getElementById("textInput").addEventListener("keypress", function(e) {
+        if (e.keyCode === 13) {
+            getBotResponse();
+        }
+    });
+</script>
+{% endblock %}
